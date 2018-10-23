@@ -88,7 +88,8 @@ export default {
           height 2.56rem
         // .title
         .title
-          font-size #333440
+          font-size #010101
+          display inline-block
         .relevent
           .star
             display inline-block

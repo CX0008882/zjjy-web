@@ -6,8 +6,7 @@
       </mt-swipe-item>
     </mt-swipe>
     <div class="popular">
-      <!-- <span class="popular-title"></span> -->
-      <!-- <span v-for=""></span> -->
+      
     </div>
     <div class="courses">
       <ul v-for="types in recommend.types" :key="types.id">
@@ -19,21 +18,28 @@
           </div>
           <div class="course-detail">
             <span class="course-title">{{course.title}}</span>
-            <star :size="24" :score="course.starLevel" class="star"></star>
-            <span class="starlevel">{{course.starLevel}}</span>
             <span class="learnnumber">{{course.learnNumber}}人学过</span>
-            <span class="mainmessage">{{course.mainMessage}}</span>
           </div>
           
         </li>
       </ul>
     </div>
+  <div>
+  
+  <active/>
+
+</div>
+  <div>绘本专区</div>
+
+  <div>图片</div>
   </div>
 </template>
 
 <script>
 import star from '@/components/star/star'
 import {getRecommend} from '@/api/api'
+import socorll from '@/components/soclle'
+import active from '@/views/Active/AcitveHome'
 export default {
   data(){
     return{
@@ -41,7 +47,9 @@ export default {
     }
   },
   components:{
-    star
+    star,
+    socorll,
+    active
   },
   mounted(){
     getRecommend().then(res=>{
@@ -72,15 +80,16 @@ export default {
     padding 0.3333rem
     margin-top 0.2rem
     background-color white
+    display block
     &>ul
       padding 0
       margin-bottom 1rem
       .title
-        display block
-        font-size 0.3rem
-        text-align center
+        display inline-block
+        font-size 0.18rem
+        text-align left 
         position relative 
-        color #81929a
+        color #010101
         &:before
           content ''
           position absolute
@@ -97,37 +106,42 @@ export default {
           width 0.35rem
           height 0.02rem
           background-color #8b8f97
+        
       .head
-        display block
-        font-size 0.6rem
-        text-align center
+        display inline-block
+        font-size 0.12rem
+        color #CCCCCC
+        text-align left 
+        padding-left 0.23rem
       .course
         list-style-type none
         margin-top 0.5rem
-        width 9.4rem
-        height 2.5rem
+        width 1.42rem
+        height 1.07rem
+        display inline-block
         &:active
           background-color #f2f4f7
         .course-image
           display inline-block
           &>img
-            width 4.2222rem
-            height 2.4684rem
+            width 1.25rem
+            height 0.8rem
             vertical-align top
             border-radius 0.3rem
         .course-detail
           vertical-align: top;
           display inline-block
           margin-left 0.3333rem
-          width 4.3333rem
-          height 2.8684rem
+          width 1.15rem
+          height 0.14rem
           color #8b8f97
           font-size 0.3rem
+          overflow hidden
           position relative
           .course-title
             display block
             color black 
-            font-size 0.45rem
+            font-size 0.13rem
           .star
             display inline-block
             margin-top 0.1111rem

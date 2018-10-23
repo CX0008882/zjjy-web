@@ -167,8 +167,8 @@
             },
             "types": [
                 {
-                    "title": "编辑精选",
-                    "head": "探索人工智能奥秘",
+                    "title": "精选推荐",
+                    "head": "更优质的贴心主题，更优质的教育",
                     "courses": [
                         {
                             "id": 10101,
@@ -243,114 +243,11 @@
                                     "introduce": "是一个老师"
                                 }
                             }
-                        },
-                        {
-                            "id": 10104,
-                            "title": "人工智能系列直播课",
-                            "imgSrc": "http://edu-image.nosdn.127.net/814D0B386AAB446FF42163B4DE6A330C.png?imageView&thumbnail=450y250&quality=100",
-                            "starLevel": 4.3,
-                            "learnNumber": 24244,
-                            "newPrice": "13.40",
-                            "oldPrice": "69.00",
-                            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-                            "mainMessage": "你想知道如何入门？想知道如何转行？想知道数学可以怎样学？想知道机器学习如何可视化？想知道网易的AI大佬对人工智能的热潮有什么看法",
-                            "introduce": {
-                                "courseIntroduce": "这是一堂厉害的课",
-                                "fitPeople": "摄影爱好者",
-                                "provider": {
-                                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                                    "name": "视觉摄影FUN及后期课堂",
-                                    "introduce": "是一个工作室"
-                                },
-                                "teacher": {
-                                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                                    "name": "雷波",
-                                    "introduce": "是一个老师"
-                                }
-                            }
                         }
-                    ]
-                },
-                {
-                    "title": "时间管理",
-                    "head": "探索时间的奥秘",
-                    "courses": [
-                        {
-                            "id": 10201,
-                            "title": "时间管理集训营",
-                            "imgSrc": "http://edu-image.nosdn.127.net/0E151877C7466EC239A2536F1F5EE4FB.png?imageView&thumbnail=450y250&quality=100",
-                            "starLevel": 4.3,
-                            "learnNumber": 0,
-                            "newPrice": "16.90",
-                            "oldPrice": "69.00",
-                            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-                            "mainMessage": "时间管理集训营/14天效率提升计划  /9种高效管理工作方法 /12中效能工具 /90天跟踪辅导",
-                            "introduce": {
-                                "courseIntroduce": "这是一堂厉害的课",
-                                "fitPeople": "摄影爱好者",
-                                "provider": {
-                                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                                    "name": "视觉摄影FUN及后期课堂",
-                                    "introduce": "是一个工作室"
-                                },
-                                "teacher": {
-                                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                                    "name": "雷波",
-                                    "introduce": "是一个老师"
-                                }
-                            }
-                        },
-                        {
-                            "id": 10202,
-                            "title": "人人必修的时间管理课",
-                            "imgSrc": "http://img-ph-mirror.nosdn.127.net/c_DxhM3gAjPYLozeonkV1Q==/6631596630792298816.png?imageView&thumbnail=450y250&quality=100",
-                            "starLevel": 4.6,
-                            "learnNumber": 468,
-                            "newPrice": "16.90",
-                            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-                            "mainMessage": "这门课程只提供简单实用的时间管理工具，通过工具来帮助你审视自己的时间、规划自己的时间、管理自己的时间，最终让你拥有自己渴望的高效、惬意的生活方式。",
-                            "introduce": {
-                                "courseIntroduce": "这是一堂厉害的课",
-                                "fitPeople": "摄影爱好者",
-                                "provider": {
-                                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                                    "name": "视觉摄影FUN及后期课堂",
-                                    "introduce": "是一个工作室"
-                                },
-                                "teacher": {
-                                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                                    "name": "雷波",
-                                    "introduce": "是一个老师"
-                                }
-                            }
-                        },
-                        {
-                            "id": 10203,
-                            "title": "上班族的时间管理课",
-                            "imgSrc": "http://edu-image.nosdn.127.net/5541238DF062908D4C9E25EC8C4608E5.png?imageView&thumbnail=450y250&quality=100",
-                            "starLevel": 4.3,
-                            "learnNumber": 5,
-                            "newPrice": "13.40",
-                            "oldPrice": "69.50",
-                            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-                            "mainMessage": "PPT在线课程三冠王，王牌首选爆款课程，畅销四年遥遥领先，超6万人学习好评如潮！、课程不限时间和次数~",
-                            "introduce": {
-                                "courseIntroduce": "这是一堂厉害的课",
-                                "fitPeople": "摄影爱好者",
-                                "provider": {
-                                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                                    "name": "视觉摄影FUN及后期课堂",
-                                    "introduce": "是一个工作室"
-                                },
-                                "teacher": {
-                                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                                    "name": "雷波",
-                                    "introduce": "是一个老师"
-                                }
-                            }
-                        }
+                
                     ]
                 }
+               
             ]
         },
         {
@@ -1218,80 +1115,6 @@
             "oldPrice": "69.00",
             "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
             "mainMessage": "你想知道如何入门？想知道如何转行？想知道数学可以怎样学？想知道机器学习如何可视化？想知道网易的AI大佬对人工智能的热潮有什么看法",
-            "introduce": {
-                "courseIntroduce": "这是一堂厉害的课",
-                "fitPeople": "摄影爱好者",
-                "provider": {
-                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                    "name": "视觉摄影FUN及后期课堂",
-                    "introduce": "是一个工作室"
-                },
-                "teacher": {
-                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                    "name": "雷波",
-                    "introduce": "是一个老师"
-                }
-            }
-        },
-        {
-            "id": 10201,
-            "title": "时间管理集训营",
-            "imgSrc": "http://edu-image.nosdn.127.net/0E151877C7466EC239A2536F1F5EE4FB.png?imageView&thumbnail=450y250&quality=100",
-            "starLevel": 4.3,
-            "learnNumber": 0,
-            "newPrice": "16.90",
-            "oldPrice": "69.00",
-            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-            "mainMessage": "时间管理集训营/14天效率提升计划  /9种高效管理工作方法 /12中效能工具 /90天跟踪辅导",
-            "introduce": {
-                "courseIntroduce": "这是一堂厉害的课",
-                "fitPeople": "摄影爱好者",
-                "provider": {
-                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                    "name": "视觉摄影FUN及后期课堂",
-                    "introduce": "是一个工作室"
-                },
-                "teacher": {
-                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                    "name": "雷波",
-                    "introduce": "是一个老师"
-                }
-            }
-        },
-        {
-            "id": 10202,
-            "title": "人人必修的时间管理课",
-            "imgSrc": "http://img-ph-mirror.nosdn.127.net/c_DxhM3gAjPYLozeonkV1Q==/6631596630792298816.png?imageView&thumbnail=450y250&quality=100",
-            "starLevel": 4.6,
-            "learnNumber": 468,
-            "newPrice": "16.90",
-            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-            "mainMessage": "这门课程只提供简单实用的时间管理工具，通过工具来帮助你审视自己的时间、规划自己的时间、管理自己的时间，最终让你拥有自己渴望的高效、惬意的生活方式。",
-            "introduce": {
-                "courseIntroduce": "这是一堂厉害的课",
-                "fitPeople": "摄影爱好者",
-                "provider": {
-                    "imgSrc": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135429910,2001866011&fm=27&gp=0.jpg",
-                    "name": "视觉摄影FUN及后期课堂",
-                    "introduce": "是一个工作室"
-                },
-                "teacher": {
-                    "imgSrc": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028269206,4116848032&fm=27&gp=0.jpg",
-                    "name": "雷波",
-                    "introduce": "是一个老师"
-                }
-            }
-        },
-        {
-            "id": 10203,
-            "title": "上班族的时间管理课",
-            "imgSrc": "http://edu-image.nosdn.127.net/5541238DF062908D4C9E25EC8C4608E5.png?imageView&thumbnail=450y250&quality=100",
-            "starLevel": 4.3,
-            "learnNumber": 5,
-            "newPrice": "13.40",
-            "oldPrice": "69.50",
-            "mp4Src": "http://pic.ibaotu.com/00/56/32/78G888piCyDu.mp4",
-            "mainMessage": "PPT在线课程三冠王，王牌首选爆款课程，畅销四年遥遥领先，超6万人学习好评如潮！、课程不限时间和次数~",
             "introduce": {
                 "courseIntroduce": "这是一堂厉害的课",
                 "fitPeople": "摄影爱好者",
