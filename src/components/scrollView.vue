@@ -259,7 +259,8 @@
   .tab_content{
     list-style-type: none;
     display: flex;
-    padding-left:0
+    padding-left:0;
+    overflow-x:auto;
   }
   .tab_item{
     flex: 1;
