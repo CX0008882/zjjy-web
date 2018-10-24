@@ -16,13 +16,44 @@
       
       <ul class="nav">
       <li class="nav-item">
-        <mt-cell title="学习兴趣"   is-link>
+        <mt-cell title="我的收藏"   is-link>
           <i slot="icon" class="icon iconfont icon-iconxuexisel" ></i>
         </mt-cell>
       </li>
       </ul>
     </div>
+    <ul class="nav">
+      <li class="nav-item">
+          <mt-cell title="一键排课" icon="more"  is-link>
+             <i slot="icon" class="icon iconfont icon-youhuiquan" ></i>
+          </mt-cell>
+      </li>
+    </ul>
+    <ul class="nav">
+       <li class="nav-item">
+         <mt-cell title="我的订单" icon="more"  is-link>
+           <i slot="icon" class="icon iconfont icon-dingdan" ></i>
+         </mt-cell>
+      </li> 
+    </ul>
 
+    <ul class="nav">
+      <li class="nav-item">
+         <mt-cell title="购物车" icon="more"  is-link>
+            <i slot="icon" class="icon iconfont icon-yuesel" ></i>
+         </mt-cell>
+      </li>
+
+    </ul>
+<ul class="nav">
+      <li class="nav-item">
+         <mt-cell title="意见与反馈"   is-link>
+           <i slot="icon" class="icon iconfont icon-icon_help" ></i>
+         </mt-cell>
+      </li>
+    
+    </ul>
+  
     <ul class="nav">
       <li class="nav-item">
          <mt-cell title="消息中心" icon="more"  is-link>
@@ -30,35 +61,8 @@
          </mt-cell>
       </li>
     </ul>
+    
     <ul class="nav">
-      <li class="nav-item">
-         <mt-cell title="我的余额" icon="more"  is-link>
-            <i slot="icon" class="icon iconfont icon-yuesel" ></i>
-         </mt-cell>
-      </li>
-      <!-- <li class="nav-item">
-         <mt-cell title="我的订单" icon="more"  is-link>
-           <i slot="icon" class="icon iconfont icon-dingdan" ></i>
-         </mt-cell>
-
-      </li> -->
-      <li class="nav-item">
-          <mt-cell title="我的优惠券" icon="more"  is-link>
-             <i slot="icon" class="icon iconfont icon-youhuiquan" ></i>
-          </mt-cell>
-      </li>
-      <li class="nav-item">
-         <mt-cell title="在线学习流量" icon="more"  is-link>
-            <i slot="icon" class="icon iconfont icon-mianliuliangfuwu" ></i>
-         </mt-cell>
-      </li>
-    </ul>
-    <ul class="nav">
-      <li class="nav-item">
-         <mt-cell title="手机账号绑定" icon="more" value="安全升级" is-link>
-            <i slot="icon" class="icon iconfont icon-weibiaoti2fuzhi11" ></i>
-         </mt-cell>
-      </li>
       <li class="nav-item" @click="changeToSetting">
          <mt-cell title="设置" icon="more" is-link>
            <i slot="icon" class="icon iconfont icon-shezhi" ></i>
@@ -68,24 +72,7 @@
         
       </li>
     </ul>
-    <ul class="nav">
-      <li class="nav-item">
-         <mt-cell title="帮助与反馈"   is-link>
-           <i slot="icon" class="icon iconfont icon-icon_help" ></i>
-         </mt-cell>
-      </li>
-      <li class="nav-item">
-         <mt-cell title="给我们建议"   is-link>
-            <i slot="icon" class="icon iconfont icon-haoping" ></i> 
-         </mt-cell>
-      </li>
-      <li class="nav-item">
-         <mt-cell title="给我们建议"   is-link>
-            <i slot="icon" class="icon iconfont icon-haoping" ></i> 
-         </mt-cell>
-      </li>
-    </ul>
-  
+    
   </div>
 </template>
 

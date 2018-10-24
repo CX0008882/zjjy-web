@@ -11,11 +11,11 @@
       </mt-tab-item>
       <mt-tab-item id="我的学习" class="tabbar-item" @click.native="changeToLearn">
         <i slot="icon" class="icon iconfont icon-icon" :style="learncolor"></i>
-        我的学习
+       课表
       </mt-tab-item>
       <mt-tab-item id="账号" class="tabbar-item" @click.native="changeToMy">
         <i slot="icon" class="icon iconfont icon-icon_account" :style="mycolor"></i>
-        账号
+        我的
       </mt-tab-item>
     </mt-tabbar>
   </div>
