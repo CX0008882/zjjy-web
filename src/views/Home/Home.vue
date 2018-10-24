@@ -1,8 +1,6 @@
 <template>
   <div class="wrapper">
-
     <div class="tab">
-  
       <mt-navbar v-model="selected">
         <mt-tab-item id="1">特色活动</mt-tab-item>
         <mt-tab-item id="2">整合活动</mt-tab-item>
@@ -11,9 +9,10 @@
         <mt-tab-item id="5">图片</mt-tab-item>
       </mt-navbar>
     </div>
-    <mt-tab-container v-model="selected" swipeable>
+    <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
-        <recommend/>
+        <scrollView title="精选推荐" desc="更优质的贴心主题，更优质的教育" />
+        <!-- <recommend/> -->
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
         <classic/>
@@ -37,13 +36,17 @@ import expert from "@/views/Home/expert";
 import major from "@/views/Home/major";
 import recommend from "@/views/Home/recommend";
 import pic from "@/views/Home/pic";
+
+import scrollView from "@/components/scrollView"
+
 export default {
   components: {
     classic,
     expert,
     major,
     recommend,
-    pic
+    pic,
+    scrollView
   },
   data(){
     return{
