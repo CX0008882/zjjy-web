@@ -1,53 +1,102 @@
 <template>
   <div class="wrapper">
-    <search :isSearching="false" @click.native="changeToSearch" class="search"></search>
+
+    <div class="tab">
+      <mt-navbar v-model="selected" fixed>
+        <mt-tab-item id="1">整合活动</mt-tab-item>
+        <mt-tab-item id="2">特色活动</mt-tab-item>
+        <mt-tab-item id="3">绘本</mt-tab-item>
+        <mt-tab-item id="4">图片</mt-tab-item>
+      </mt-navbar>
+    </div>
     <ul class="left">
       <li v-for="(item, index) in classes" :key="item.id" class="left-class" :class="item.isClick?'active':''" @click="changeTitle(index)">
         <span class="title">{{item.title}}</span>
       </li>
     </ul>
     <div class="right">
-      <div v-for="src in nowClass.img" :key="src.id" class="image">
-        <img :src="src" alt="">
-      </div>
-      <ul v-for="item in nowClass.class" :key="item.id" class="right-class">
-        <span class="head">{{item.head}}</span>
-        <div class="someclass">
-          <li v-for="detail in item.detail" :key="detail.id">
-          <span class="detail">{{detail}}</span>
-          </li>
-        </div>
-        
-      </ul>
+
+      <mt-tab-container v-model="selected">
+
+        <mt-tab-container-item id="0">
+
+        </mt-tab-container-item>
+        <mt-tab-container-item id="2">
+          <ActiveList :typeId="huibentypes"></ActiveList>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="3">
+          <HuiBenList  :typeId="huibentypes"></HuiBenList>
+        </mt-tab-container-item>
+
+        <mt-tab-container-item id="4">
+          <picList  :typeId="huibentypes"></picList>
+        </mt-tab-container-item>
+
+      </mt-tab-container>
+
+
+
     </div>
-    
+
   </div>
 </template>
 
 <script>
 import search from "@/components/search"
 import { getClassify } from "@/api/api"
+import MtTabContainerItem from "../../node_modules/mint-ui/packages/tab-container-item/src/tab-container-item";
+import MtTabbar from "../../node_modules/mint-ui/packages/tabbar/src/tabbar";
+import MtTabContainer from "../../node_modules/mint-ui/packages/tab-container/src/tab-container";
+import MtTabItem from "../../node_modules/mint-ui/packages/tab-item/src/tab-item";
+import HuiBenList from "@/views/HuiBen/HuiBenList"
+import ActiveList from  "@/views/Active/ActiveList";
+import picList from  "@/views/PicList/picList";
 export default {
   data() {
     return {
       classes: [],
       nowClass:{},
+      selected: "1",
+      huibentypes:"1"
     };
   },
   components: {
-    search
+    search,
+    MtTabItem,
+    MtTabContainer,
+    MtTabbar,
+    MtTabContainerItem,
+    HuiBenList,
+    ActiveList,
+    picList
   },
   methods: {
     changeToSearch() {
+
       this.$router.push({ path: "home/search" });
     },
     changeTitle(key) {         //改变css样式（当前点亮）
+
+      this.huibentypes=key;
+
+      //console.log(this.typeId);
       let classes = this.classes;
       for (let item of classes) {
         item.isClick = false;
       }
       classes[key].isClick = true;
       this.nowClass = classes[key];
+    },
+    loadMore() {
+      this.loading = true;
+      setTimeout(() => {
+          list=list+100;
+//        let last = this.list[this.list.length - 1];
+//        for (let i = 1; i <= 10; i++) {
+//          this.list.push(last + i);
+//        }
+        this.loading = false;
+      }, 2500);
     }
   },
   mounted() {
@@ -62,7 +111,13 @@ export default {
       this.classes = classes
       this.nowClass = classes[0];
     });
-  }
+  },
+  watch: {
+    selected(curVal, oldVal){
+
+        //this.huibentypes=curVal;  //概不
+    }
+    }
 };
 </script>
 
@@ -77,9 +132,17 @@ export default {
     overflow hidden
   .mint-search
     height initial
+  .mint-navbar .mint-tab-item.is-selected
+      margin 0
+      border-bottom none
+      .tab
+        height 53px
+        width 375px
+        font-size 0.13rem
+
   .left
     position fixed
-    width 2.56rem
+    width 80px
     height 100%
     background-color #f7f9fc
     margin 0
@@ -103,11 +166,11 @@ export default {
           position absolute
           width 0.128rem
           height 1.4506rem
-          background-color #2cc17b
+          background-color white
   .right
-    width 6.61323rem
+    width 7rem
     // margin 1rem
-    margin-left 2.9867rem
+    margin-left 2.45rem
     margin-top 1.28rem
     margin-right 0.42666rem
     margin-bottom 0.85332rem

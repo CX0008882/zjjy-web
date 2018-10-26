@@ -5,9 +5,9 @@ import Router from 'vue-router'
 // import Mystudy from '@/views/Mystudy'
 // import classify from '@/views/Classify'
 // import Coursedetails from '@/views/Coursedetails/Coursedetails'
-// import Classifydetails from '@/views/Classifydetails' 
+// import Classifydetails from '@/views/Classifydetails'
 // import Login from '@/views/Login'
-// import search from '@/components/search' 
+// import search from '@/components/search'
 // import NotFound from '@/components/NotFound'
 // import setting from '@/views/Account/setting'
 Vue.use(Router)
@@ -37,7 +37,7 @@ export default new Router({
       path: '/account',
       name: 'Account',
       component: resolve => require(['@/views/Account/Account'], resolve),
-    },  
+    },
     {
       path: '/mystudy',
       name: 'Mystudy',
@@ -66,14 +66,13 @@ export default new Router({
       path: '/classifydetails',
       name: 'Classifydetails',
       component: resolve => require(['@/views/Classifydetails'], resolve),
-      children:[
-      ]
+      children: []
     },
     {
       path: '/home/search',
       name: 'search',
       component: resolve => require(['@/components/search'], resolve),
-      
+
     },
     {
       path: '/account/login',
@@ -81,13 +80,19 @@ export default new Router({
       component: resolve => require(['@/views/Login'], resolve),
     },
     {
-      path:'/account/setting',
+      path: '/account/setting',
       component: resolve => require(['@/views/Account/setting'], resolve),
     },
     {
       path: '*',
       name: 'notfound',
       component: resolve => require(['@/components/NotFound'], resolve),
+    },
+    {
+      path: '/couseInfo',
+      name: 'couseInfo',
+      component: resolve => require(['@/views/Active/Couserinfro'],resolve),
+
     },
 
   ]
