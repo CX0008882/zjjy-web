@@ -22,6 +22,11 @@
 
         </mt-tab-container-item>
         <mt-tab-container-item id="2">
+          <div class="Ahead" >
+            <img src="../assets/img/activeh.png"/>
+            <a href="#"></a>
+          </div>
+
           <ActiveList :typeId="huibentypes"></ActiveList>
         </mt-tab-container-item>
         <mt-tab-container-item id="3">
@@ -218,5 +223,10 @@ export default {
           font-size 0.34134rem
           &:active
             background-color #f2f4f7
+
+     .Ahead img
+       width: 265px;
+       height: 110px;
+       border-radius: 7px;
 </style>
 

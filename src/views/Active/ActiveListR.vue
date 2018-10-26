@@ -49,6 +49,7 @@
 
   .contents {
     height: 100%;
+    padding-left:5px;
 
   }
 
@@ -57,6 +58,7 @@
     padding-top: 15px;
     display: block;
     clear: both;
+
   }
 
   .title1 {
@@ -67,31 +69,33 @@
   }
 
   .title2 {
-    margin-left: 120px;
+    margin-left: 210px;
 
   }
 
 
 
   .hubencontens {
-    width: 284px;
+    width: 340px;
     padding: 0px;
     margin: 0px;
 
   }
 
   .hubenitem {
-    width: 125px;
-    height: 80px;
+    width: 160px;
+    height: 102px;
     border-radius: 5px;
     overflow: hidden;
-    background-size: 125px, 80px;
+    background-size: 160px, 102px;
     margin-top: 5px;
+
+
   }
 
   .hubenitem img {
-    width: 125px;
-    height: 80px;
+    width: 160px;
+    height: 102px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 0px 8px #000000
@@ -100,16 +104,17 @@
 
   .itmlist {
 
-    width: 125px;
+    width: 160px;
     float: left;
     display: block;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-top: 15px;
   }
 
   .hubentype {
 
-    margin-left: 80px;
-    margin-top: 50px;
+    margin-left: 100px;
+    margin-top: 69px;
     background-color: #000000;
     opacity: 0.4;
     border-radius: 9px;
