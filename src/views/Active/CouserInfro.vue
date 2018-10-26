@@ -1,8 +1,8 @@
 <template>
 
 
-  <div class="headcontent">
-
+  <div class="warp">
+    <div class="headcontent">
     <div class="head">
       <img src="../../assets/img/temp/ts.png"/>
     </div>
@@ -11,23 +11,23 @@
       <div class="itmsg">身临其境，导演认识</div>
       <div class="tyys"><span>大班</span><span>中班</span><span>小班</span> <div>已收藏</div></div>
     </div>
-
-<div class="cousercontent">
-  <div class="tab">
-    <mt-navbar v-model="selected" fixed>
-      <mt-tab-item id="1">小班</mt-tab-item>
-      <mt-tab-item id="2">中班</mt-tab-item>
-      <mt-tab-item id="3">大班</mt-tab-item>
-    </mt-navbar>
   </div>
-  <mt-tab-container v-model="selected">
 
-    <mt-tab-container-item id="0"></mt-tab-container-item>
-    <mt-tab-container-item id="1"></mt-tab-container-item>
-  </mt-tab-container>
-</div>
-
-
+  <div class="content">
+    <div class="cousercontent">
+      <div class="tab">
+        <mt-navbar v-model="selected">
+          <mt-tab-item id="1">小班</mt-tab-item>
+          <mt-tab-item id="2">中班</mt-tab-item>
+          <mt-tab-item id="3">大班</mt-tab-item>
+        </mt-navbar>
+      </div>
+      <mt-tab-container v-model="selected">
+        <mt-tab-container-item id="0"></mt-tab-container-item>
+        <mt-tab-container-item id="1"></mt-tab-container-item>
+      </mt-tab-container>
+    </div>
+  </div>
   </div>
 
 
@@ -105,11 +105,15 @@
   }
   .headcontent{
     position: relative;
+    height:228px;
   }
   .head {
 
     position: absolute;
     z-index: 2;
+  }
+
+  .content {
   }
 
   .tile{
