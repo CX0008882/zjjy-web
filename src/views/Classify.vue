@@ -26,7 +26,6 @@
             <img src="../assets/img/activeh.png"/>
             <a href="#"></a>
           </div>
-
           <ActiveList :typeId="huibentypes"></ActiveList>
         </mt-tab-container-item>
         <mt-tab-container-item id="3">

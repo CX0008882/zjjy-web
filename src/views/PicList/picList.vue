@@ -5,10 +5,12 @@
       <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
         <ul class="hubencontens">
           <li v-for="n in 10" class="itmlist">
-            <div class="hubenitem"
-                 v-bind:style="{backgroundImage:'url('+require('../../assets/se.png')+')',backgroundRepeat:'no-repeat'}">
-             <span class="hubentype">免费</span>
-            </div>
+            <a href="javascript:void(0)" @click="getpicinfor">
+              <div class="hubenitem"
+                   v-bind:style="{backgroundImage:'url('+require('../../assets/se.png')+')',backgroundRepeat:'no-repeat'}">
+                <span class="hubentype">免费</span>
+              </div>
+            </a>
           </li>
 
         </ul>
@@ -23,14 +25,19 @@
 <script>
   export default {
 
-      data(){
-          return {
-              list:"1"
-          }
-      },
+    data() {
+      return {
+        list: "1"
+      }
+    },
 
     methods: {
 
+      getpicinfor: function () {
+
+        this.$router.push({path: "/PicList/picList"});
+
+      },
       loadMore() {
         this.loading = true;
         setTimeout(() => {
@@ -55,7 +62,6 @@
   .picview {
 
   }
-
 
   .hubencontens {
     width: 284px;

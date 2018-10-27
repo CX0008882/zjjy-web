@@ -37,7 +37,7 @@
 
       getCourseInfor:function(id){
         id=1;
-        this.$router.push({path: '/couseInfo', params: {id: id}});
+        this.$router.push({path: '/course/couseInfo', params: {id: id}});
 
       }
 

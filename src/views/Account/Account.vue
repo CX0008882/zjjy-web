@@ -38,22 +38,14 @@
     </ul>
 
     <ul class="nav">
-      <li class="nav-item">
+      <li class="nav-item" @click="getCarInfor" >
          <mt-cell title="购物车" icon="more"  is-link>
             <i slot="icon" class="icon iconfont icon-yuesel" ></i>
          </mt-cell>
       </li>
 
     </ul>
-<ul class="nav">
-      <li class="nav-item">
-         <mt-cell title="意见与反馈"   is-link>
-           <i slot="icon" class="icon iconfont icon-icon_help" ></i>
-         </mt-cell>
-      </li>
-    
-    </ul>
-  
+
     <ul class="nav">
       <li class="nav-item">
          <mt-cell title="消息中心" icon="more"  is-link>
@@ -61,7 +53,17 @@
          </mt-cell>
       </li>
     </ul>
-    
+
+    <ul class="nav">
+      <li class="nav-item">
+        <mt-cell title="意见与反馈"   is-link>
+          <i slot="icon" class="icon iconfont icon-icon_help" ></i>
+        </mt-cell>
+      </li>
+
+    </ul>
+
+
     <ul class="nav">
       <li class="nav-item" @click="changeToSetting">
          <mt-cell title="设置" icon="more" is-link>
@@ -101,6 +103,11 @@ export default {
     },
     changeToLogin(){            //跳转到登录界面
       this.$router.push('/account/login');
+    },
+    getCarInfor(){
+                               //跳转到购物车
+       this.$router.push('/OrderList/ordercart');
+
     }
   },
   computed:{

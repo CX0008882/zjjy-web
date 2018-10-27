@@ -9,11 +9,13 @@
         <ul class="hubencontens" v-for="n in 3">
           <li v-for="n in list" class="itmlist">
 
+            <a href="javascript:void(0)" @click="getCourseInfor" class="activea">
             <div class="hubenitem"
                  v-bind:style="{backgroundImage:'url('+require('../../assets/huiben.png')+')',backgroundRepeat:'no-repeat'}">
+
               <span class="hubentype"><span>免费</span></span>
             </div>
-
+            </a>
             <div class="huibenmiaos">信息描述信去</div>
 
           </li>
@@ -22,6 +24,7 @@
       </div>
 
       <div class="title">
+
         <span class="title1">大卫不可以</span>
         <span class="title2">第2周</span>
         <ul class="hubencontens" v-for="n in 3">
@@ -111,6 +114,11 @@
     margin-top: 15px;
   }
 
+  .activea{
+
+    text-decoration:none;
+    color:#333;
+  }
   .hubentype {
 
     margin-left: 100px;
@@ -179,6 +187,11 @@
           this.loading = false;
         }, 2500);
       },
+      getCourseInfor:function(id){
+        id=1;
+        this.$router.push({path: '/course/couseActive', params: {id: id}});
+
+      }
 
 
     },

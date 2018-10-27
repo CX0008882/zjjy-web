@@ -89,11 +89,36 @@ export default new Router({
       component: resolve => require(['@/components/NotFound'], resolve),
     },
     {
-      path: '/couseInfo',
+      path: '/course/couseInfo',
       name: 'couseInfo',
-      component: resolve => require(['@/views/Active/Couserinfro'],resolve),
+      component: resolve => require(['@/views/Active/Couserinfro'], resolve),
 
     },
+    {
+      path: '/course/couseActive',
+      name: 'couseActive',
+      component: resolve => require(['@/views/Active/CouseAcive'], resolve),
+
+    },
+    {
+      path: '/huiben/huibeninfor',
+      name: 'huibeninfor',
+      component: resolve => require(['@/views/HuiBen/Huibeninfor'], resolve)
+
+    },
+    {
+      path: '/PicList/picList',
+      name: 'piclist',
+      component: resolve => require(['@/views/PicList/picinfor'], resolve)
+
+    },
+    {
+        path: '/OrderList/ordercart',
+        name:'carlist',
+        component: resolve =>require(['@/views/Order/Cart'],resolve)
+
+
+    }
 
   ]
 })

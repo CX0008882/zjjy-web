@@ -4,11 +4,13 @@
       <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
         <ul class="hubencontens">
           <li v-for="n in list" class="itmlist">
+            <a href="javascript:void(0)" @click="gethuibenifnro">
             <div class="hubenitem"
                  v-bind:style="{backgroundImage:'url('+require('../../assets/huiben.png')+')',backgroundRepeat:'no-repeat'}">
               <span class="hubentype"><span>免费</span></span>
             </div>
 
+            </a>
             <div class="huibenmiaos">信息描述信去玩儿群翁人</div>
 
           </li>
@@ -50,8 +52,16 @@
 
           this.loading = false;
         }, 2500);
-      }
+      },
+      gethuibenifnro:function(id){
+
+        id=1;
+        this.$router.push({path: '/huiben/huibeninfor', params: {id: id}});
+
+
+      },
     },
+
     watch: {
       // 查询条件的变化
       typeId: function (val) {
