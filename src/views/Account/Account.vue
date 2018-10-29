@@ -15,7 +15,7 @@
       </div>
       
       <ul class="nav">
-      <li class="nav-item">
+      <li class="nav-item" @click="getStoreList">
         <mt-cell title="我的收藏"   is-link>
           <i slot="icon" class="icon iconfont icon-iconxuexisel" ></i>
         </mt-cell>
@@ -36,10 +36,19 @@
          </mt-cell>
       </li> 
     </ul>
-
+  
     <ul class="nav">
       <li class="nav-item" @click="getCarInfor" >
          <mt-cell title="购物车" icon="more"  is-link>
+            <i slot="icon" class="icon iconfont icon-yuesel" ></i>
+         </mt-cell>
+      </li>
+
+    </ul>
+
+    <ul class="nav">
+      <li class="nav-item" @click="getMyCourse" >
+         <mt-cell title="已购课程" icon="more"  is-link>
             <i slot="icon" class="icon iconfont icon-yuesel" ></i>
          </mt-cell>
       </li>
@@ -107,6 +116,15 @@ export default {
     getCarInfor(){
                                //跳转到购物车
        this.$router.push('/OrderList/ordercart');
+
+    },
+    getStoreList(){    //跳转到我的收藏列表
+
+      this.$router.push('/Store/MyStoreList');
+    },
+    getMyCourse(){     //跳转到我的课程列表
+      
+       this.$router.push('/Course/CourseList');
 
     }
   },

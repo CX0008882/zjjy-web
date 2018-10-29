@@ -1,63 +1,65 @@
 <template>
-    <div class="carlist">
+  <div class="carlist">
   <div class="headimag">
-    <img src="../../assets/img/temp/ts.png" alt="">
+    <img src="../../assets/icon/car.png" alt="">
   </div>
 
    <div class="coneotns">
-      <p>
-       特色活动
-      </p>
-     <table class="table">
-       <tr>
-         <td>图片位置</td>
-           <td><span>标题</span><span>标题1</span><span>标题2</span></td>
-           <td>价格 1</td>
-       </tr>
-
-
-     </table>
-      
+      <div class="teims">
+        <span>
+           <input type="checkbox" name="" id="active">
+             <label for="active"></label>
+        </span>
+              <span>
+              <h2> 特色活动</h2>
+              </span>
+              
    </div>
 
+     <div>
+        <span><input type="checkbox" name="" id="active">
+             <label for="active"></label>
+             </span>
+          <span><img class="imgss" src="../../assets/img/temp/tss.png" alt=""></span>  
 
+          <span><span>就是爱科学</span><span>班级 小班</span></span> 
+           <span><span>¥2600</span><span>vip会员</span><span>-¥260</span></span>  
+
+
+     </div>
+      
+   </div>
  </div>
 
 </template>
 
 <script>
-export default {
-  
-  data(){
 
-  }
-
-}
 </script>
 
 
 <style lang="stylus" scoped>
 .carlist
-position relative
-  .headimag
-    height 135px
-    positio absolute
-   
-    &img 
-     width 375px
-     heig  128px
-  .coneotns
-     position absolute   
-     width :335px
-     border-style solid 
-     border-width 1px
-     margin-left 20px
-     box-shadow:0 0 1px #000
-     border-bottom 5px
-     background-color #ffffff
-
-     
-
-
-
+   position relative
+   background-color #FDFDFE
+   .headimag
+     position absolute
+    img  
+      width 375px  
+      height 127px   
+   .coneotns
+     background-color #FFFFFF
+     border 1px solid #fff
+     width 335px
+     border-radius 5px 
+     position absolute
+     top  90px
+     left  18px
+    span 
+      display inline-block
+      text-align center
+     .imgss
+       width 70px
+       height 45px
+        
 </style>

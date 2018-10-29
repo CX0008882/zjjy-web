@@ -118,6 +118,24 @@ export default new Router({
         component: resolve =>require(['@/views/Order/Cart'],resolve)
 
 
+    },
+    {
+        path: '/Store/MyStoreList',
+        name:  'Mystore',
+        component: resolve => require(['@/views/Store/MyStoreList'],resolve)
+    },
+    {
+        path: '/Course/CourseList',
+        name: 'CourseList',
+        component: resolve => require(['@/views/Course/CourseList'],resolve)
+
+    },
+    {
+       path: '/Course/Paike',
+       name: 'paike',
+       component: resolve => require(['@/views/Course/Paike'],resolve)
+
+
     }
 
   ]
