@@ -39,7 +39,9 @@
 </mt-picker>
 </mt-popup>
 
-
+<div class="paike">
+  <input type="button" value="一键排课">
+</div>
 
     </div>
 </template>
@@ -59,6 +61,17 @@ border-bottom: 2px solid #ececec
    font-size: 20px;
    color: blue;
 }
+ .paike{
+   
+    position:fixed;
+    top: 0px;
+    width: 305px;
+    height: 21px;
+    background-color: #45A1FF;
+    color: white
+
+
+ }
 </style>
 <script>
 import {formatDate} from '../../common/js/data.js';
@@ -84,7 +97,7 @@ export default {
           className: 'slot2'
         }, {
           flex: 1,
-          values: ['上午', '下午','上午','下午','上午','下午','上午','下午','上午','下午'],
+          values: ['上午', '下午'],
           className: 'slot3',
           textAlign: 'left'
         }
