@@ -149,7 +149,7 @@
 </style>
 <script>
   import {InfiniteScroll} from 'mint-ui';
-   import {formatDate} from '../../common/js/data.js';
+
   export default{
     props: {
       typeId: {

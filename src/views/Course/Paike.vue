@@ -1,5 +1,6 @@
 <template>
     <div class="warrp">
+      <div class="content">
      <div><h2>就是爱表演</h2></div>
 <div @click="openPicker">
 <mt-cell
@@ -38,17 +39,19 @@
 </div>
 </mt-picker>
 </mt-popup>
-
-<div class="paike">
-  <input type="button" value="一键排课">
 </div>
-
+<div class="paike" @click="getCourseInfor">
+  <span>一键排课</span>
+</div>
     </div>
 </template>
 <style scoped>
 .warrp{
   padding-left: 20px;
   padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction:column;
 }
 .iteday {
 display: flex;
@@ -61,15 +64,26 @@ border-bottom: 2px solid #ececec
    font-size: 20px;
    color: blue;
 }
- .paike{
-   
-    position:fixed;
-    top: 0px;
-    width: 305px;
-    height: 21px;
-    background-color: #45A1FF;
-    color: white
 
+.content{
+  flex: 1;
+  -webkit-flex: 1;
+}
+ .paike{
+    margin-top: 50px;
+    width: 305px;
+    height: 42px;
+    border: 2px solid #ffffff;
+    border-radius: 42px;
+    text-align: center;
+    font-size: 14px;
+    background-image: -webkit-linear-gradient(140deg,#45A1FF, #45B7FF); 
+    color: #ffffff;
+    line-height:42px;
+ }
+ .paike span{
+ 
+      
 
  }
 </style>
@@ -80,8 +94,8 @@ export default {
   data(){
      
      return { 
-         popupVisible:false,
 
+        popupVisible:false,
         pickerVisible:new Date(),
         startime:'2018-08-08',
         mintimes:'',
@@ -126,8 +140,12 @@ export default {
       },
 
       showdays(){
-
            this.popupVisible=true;
+      },
+      getCourseInfor(){
+
+          this.$router.push({path:'/mystudy'});
+        
 
       }
 

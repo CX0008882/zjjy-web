@@ -59,6 +59,7 @@
 import HuiBenList from "@/views/HuiBen/HuiBenList"
 import ActiveList from  "@/views/Course/ActiveList";
 import picList from  "@/views/PicList/picList";
+
 export default {
     data() {
     return {

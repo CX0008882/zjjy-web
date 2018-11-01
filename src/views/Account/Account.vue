@@ -1,18 +1,26 @@
 <template>
   <div class="wrapper">
     <div class="user">
-      <div v-if="user.name">
-        <img :src="user.src" alt="" class="avatar"/>
         <div class="description">
-          <p class="title">{{user.name}}</p>
-          <span class="ways">{{user.ways}}</span>
+       <span>
+        <img :src="user.src" alt="" class="avatar"/>
+          </span>
+          <span class="insyt">
+             <p class="intsyfirst">{{user.ways}}</p>
+             <p class="insytsend">{{user.desc}}</p>
+          </span>
+          <span class="waryimgs" @click="getmyclass" ><img src="../../assets/icon/yuanzang.png" alt=""></span>
         </div>
-      </div>
+      
+      <!--
+
+         <div v-if="user.name"></div>
       <div class="login" v-if="!user.name">
         <div class="wrap">
           <div class="button" @click="changeToLogin">登录</div>
         </div>
       </div>
+       -->
       
       <ul class="nav">
       <li class="nav-item" @click="getStoreList">
@@ -21,32 +29,19 @@
         </mt-cell>
       </li>
       </ul>
+       
+
+      <ul class="nav">
+      <li class="nav-item" >
+        <mt-cell title="教师管理" to="/Teach/AccoutList" is-link>
+          <i slot="icon" class="icon iconfont icon-iconxuexisel" ></i>
+        </mt-cell>
+      </li>
+      </ul>
+
+
     </div>
-    <ul class="nav">
-      <li class="nav-item">
-          <mt-cell title="一键排课" icon="more"  is-link>
-             <i slot="icon" class="icon iconfont icon-youhuiquan" ></i>
-          </mt-cell>
-      </li>
-    </ul>
-    <ul class="nav">
-       <li class="nav-item">
-         <mt-cell title="我的订单" icon="more"  is-link>
-           <i slot="icon" class="icon iconfont icon-dingdan" ></i>
-         </mt-cell>
-      </li> 
-    </ul>
-  
-    <ul class="nav">
-      <li class="nav-item" @click="getCarInfor" >
-         <mt-cell title="购物车" icon="more"  is-link>
-            <i slot="icon" class="icon iconfont icon-yuesel" ></i>
-         </mt-cell>
-      </li>
-
-    </ul>
-
-    <ul class="nav">
+ <ul class="nav">
       <li class="nav-item" @click="getMyCourse" >
          <mt-cell title="已购课程" icon="more"  is-link>
             <i slot="icon" class="icon iconfont icon-yuesel" ></i>
@@ -56,8 +51,29 @@
     </ul>
 
     <ul class="nav">
-      <li class="nav-item">
-         <mt-cell title="消息中心" icon="more"  is-link>
+       <li class="nav-item">
+         <mt-cell title="我的订单" icon="more"  is-link>
+           <i slot="icon" class="icon iconfont icon-dingdan" ></i>
+         </mt-cell>
+      </li> 
+    </ul>
+  
+   
+     <ul class="nav">
+      <li class="nav-item" @click="getCarInfor" >
+         <mt-cell title="购物车" icon="more"  is-link>
+            <i slot="icon" class="icon iconfont icon-yuesel" ></i>
+         </mt-cell>
+      </li>
+
+    </ul>
+    
+
+   
+
+    <ul class="nav">
+      <li class="nav-item" >
+         <mt-cell title="消息中心" icon="more" to="/Message/MessageList" is-link>
             <i slot="icon" class="icon iconfont icon-xiaoxi" ></i>
          </mt-cell>
       </li>
@@ -65,7 +81,7 @@
 
     <ul class="nav">
       <li class="nav-item">
-        <mt-cell title="意见与反馈"   is-link>
+        <mt-cell title="意见与反馈" to="/Message/suggestions"   is-link>
           <i slot="icon" class="icon iconfont icon-icon_help" ></i>
         </mt-cell>
       </li>
@@ -92,14 +108,15 @@ import {mapGetters} from 'vuex'
 export default {
   data(){
     return{
-      // user: {
-        // src: 'http://img1.imgtn.bdimg.com/it/u=3198762613,766144830&fm=27&gp=0.jpg',
-        // username: 'dmy123456789',
-        // ways: '通过qq登录',
-        // setting: {
-        //   badge: 2,
-        // }
-      // }
+       user: {
+         src: 'http://img1.imgtn.bdimg.com/it/u=3198762613,766144830&fm=27&gp=0.jpg',
+         username: 'dmy123456789',
+         ways: '李笑来',
+         desc:'中科院幼儿园中关村实验园',
+         setting: {
+           badge: 2,
+         }
+       }
     }
   },
   methods:{
@@ -125,12 +142,16 @@ export default {
     getMyCourse(){     //跳转到我的课程列表
       
        this.$router.push('/Course/CourseList');
+    },
+    getmyclass(){
+                      //成为园长
+        this.$router.push('/account/yuanzhang');
 
     }
   },
   computed:{
     ...mapGetters({       
-      user: 'getUserData'
+      //user: 'getUserData'
     })
   }
 }
@@ -146,6 +167,8 @@ export default {
   .user
     background-color white
     border-bottom 0.022666rem solid #ced1da
+    font-size 18px
+
     .nav
       margin-top 8px
       margin-bottom 0
@@ -158,11 +181,29 @@ export default {
       margin-left 0.21333rem
       margin-top 0.21333rem
     .description
-      display inline-block
-      vertical-align top
+      padding-left 20px
+      padding-top 50px
+      width 373px
+      height 122px
+    .waryimgs img 
+      width  82px;
+      height 25px;
+  .intsyfirst
+     font-size  18px;     
+  .insytsend
+      font-size 12px;
+    .waryimgs
+      display inline-block;
       .title
         font-size 0.42666rem
         font-weight 600
+    .insyt 
+      width 160px;
+      height 72px;
+      display inline-block;
+    .insyt span 
+      padding-block-start 0px
+      padding-block-end  0px  
       .ways
         font-size 0.34133rem
     .login

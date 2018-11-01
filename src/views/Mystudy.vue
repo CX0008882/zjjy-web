@@ -1,223 +1,285 @@
 <template>
-  <div class="wrapper">
-    <div class="user" v-if="user.name">
-      <img :src="user.src" alt="" class="avatar"/>
-      <div class="description">
-        <p class="title">{{user.name}}</p>
-        <span class="target">{{user.target}}</span>
+  <div class="warrp" id="mystude">
+    <div class="head"  v-bind:style="{backgroundImage:'url('+require('../assets/icon/kebiao.png')+')',backgroundRepeat:'no-repeat'}">
+      <div class="daytime">
+      <span class="daylab">17</span>
+        <div class="daye">
+          <p>星期二</p>
+          <p>2081-08-08</p>
+        </div>
+       </div>
+    </div>
+<div>
+    <div class="mydatas" id="mydatas" v-show="myShow" >
+      <Calendar
+      v-on:choseDay="clickDay"
+      v-on:changeMonth="changeDate"
+      :markDate=arr></Calendar>
+
+        <div class="icosm" @click="showwweks" v-show="myShow">
+            <img src="../assets/icon/shouchangm.png" alt="">
+
+        </div>
+    </div>
+    
+
+      <div id="myweeksday" v-show="weekShow">
+
+     <div data-v-824b0b00="" class="wh_content_all"> <div data-v-824b0b00="" class="wh_content"><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          日
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          一
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          二
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          三
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          四
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          五
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+          六
+        </div></div></div> <div data-v-824b0b00="" class="wh_content"><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          1
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          2
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          3
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          4
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          5
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          6
+        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+          7
+        </div></div></div>
+        
+        <div class="icosm" @click="showwweks" @v-show="myShow">
+            <img src="../assets/icon/shangjiantou.png" alt="">
+
+        </div>
+        </div>
+
       </div>
+  
     </div>
-    <div class="login" v-if="!user.name">
-      <div class="wrap">
-        <div class="button" @click="changeToLogin">登录</div>
+    <div class="mycourselist">
+      <h2>上午</h2>
+     
+         <div class="expert" v-for="expert in experts" :key="expert.id">
+           <span class="imyst"></span>
+      <a href="javascript:void(0)" @click="getCourseInfor" class="activea">
+      <img :src="expert.imgSrc" alt="" class="avatar">
+      <div class="expert-detail">
+        <span class="name">{{expert.name}}</span>
+        <span class="describe">{{expert.describe}}</span>
       </div>
+      </a>
+
+       </div>
+        
+       <h2>下午</h2>
     </div>
-    <div class="manage">
-      <span class="myorder">我的订阅</span>
-      <span class="mycollect">我的收藏</span>
-      <span class="mydown">我的下载</span>
-    </div>
-    <div class="nowlearn" v-if="user.nowLearnClass">
-      <div class="head">
-        <span class="title">在学的课程</span>
-        <span class="seeall">查看全部</span>
-      </div>
-      <ul class="allclass" >
-        <li v-for="classes in classList" :key="classes.id" class="class" @click="changeToDetail(classes)">
-          <div class="class-description">
-            <p class="title">{{classes.title}}</p>
-            <span class="progress">已学{{classes.progress}}%</span>
-          </div>
-          <img :src="classes.imgSrc" alt="" class="class-img">
-        </li>
-      </ul>
-    </div>
+  
+
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import { getAllclass } from "@/api/api";
+import Calendar from 'vue-calendar-component';
+import {getExpert} from '@/api/api'
 export default {
+
   data(){
-    return{
-      classList : [],
-      allClass : [],
-    }
-  },
-  computed:{
-    ...mapGetters({
-        user: 'getUserData'
-    }),
-    // classList(){
-      
-    // }
-  },
-  mounted(){
-    getAllclass().then((res)=>{
-      this.allClass = res;
-      for(let index in this.user.nowLearnClass){    //获取到allclass信息后 查询当前用户现学课程
-      this.checkList(this.user.nowLearnClass[index]);
+      return {
+        arr:['2018/10/13'],
+        myShow:false,
+        weekShow:true,
+        experts:[]
+
       }
-    });
+
+    },
+    mounted(){
+      getExpert().then(res=>{
+        this.experts= res.experts;
+      })
+    },
+  components: {
     
+    Calendar 
+
   },
-  methods:{
-    checkList(item){    //通过user中的所学课程id从所有课程中寻找详细课程信息
-      for(let key of this.allClass){
-        if(key.id == item.id){
-          key.progress = item.progress;
-          this.classList.push(key);
-        }
+  methods: {
+    
+     clickDay(data) {
+      console.log(data); //选中某天
+    },
+    changeDate(data) {
+      console.log(data); //左右点击切换月份
+    },
+    clickToday(data) {
+      console.log(data); //跳到了本月
+    },
+    getCourseInfor:function(id){
+        id=1;
+        this.$router.push({path: '/course/couseInfo', params: {id: id}});
+
+      },
+      showwweks(){
+         
+          if(this.myShow){
+
+            this.weekShow=true;
+            this.myShow=false;
+          }else{
+           
+            this.myShow=true;
+            this.weekShow=false;
+ 
+          }
       }
-    },
-    changeToDetail(classes){
-      this.$router.push({path:"/home/coursedetails" , query:{id:classes.id}})     //通过vue-router传参跳转
-    },
-    changeToLogin(){
-      this.$router.push('/account/login');
-    }
-  }
+
+
+
+  } 
+
+
+
+
 }
 </script>
-
-<style lang="stylus" scoped>
-.wrapper 
-  background-color: #f2f4f7;
-  width: 100%;
-  height: 92%;
-  position: fixed;
-  overflow: scroll;
-  .user
-    // height 7rem
-    background-color: white;
-    padding: .42667rem;
-    .nav 
-      margin-top: 8px;
-      margin-bottom: 0;
-    .avatar 
-      width: 1.70667rem;
-      height: 1.70667rem;
-      border-radius: 1.70667rem;
-      border: 0.14222rem solid #ced1da;
-      display: inline-block;
-      margin-left: .21333rem;
-      margin-top: 0.21333rem;
-    .description 
-      display: inline-block;
-      vertical-align: top;
-      margin-left: 0.21333rem;
-      .title 
-        font-size: .64rem;
-        font-weight: 600;
-        margin-top: .42667rem;
-        margin-bottom: 0;
-      .target 
-        display: inline-block;
-        margin-top: 0.21333rem;
-        font-size: 0.34133rem;
-  .login
-    height 4rem
-    width 10rem
-    background-color white
-    text-align center
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .wrap
-      width 2.2rem
-      height 2.2rem
-      border-radius 50%
-      border 1px solid #2cc17b
-      .button
-        width 2rem
-        height 2rem
-        border-radius 50%
-        background-color #2cc17b
-        line-height 2rem
-        margin 0.1rem
-        color white
-        font-size 0.5rem
-        &:active
-          background-color #f2f4f7
-  .manage 
-    background-color white
-    display: flex;
-    // border-bottom: .042667rem solid #ced1da;
-    height 0.9rem
-    line-height 0.5rem
-    // height 1rem
-    &>span 
-      margin-top: 0.21333rem;
-      flex: 1;
-      text-align: center;
-      border-right: 1px solid #ced1da
-      margin-bottom 0.1rem
+<style lang="stylus">
+#mystude
+.wrapper
+  margin:0 auto
+  .wh_content_all
+    background-color: #ffffff
+    .wh_content_item
+     color:#666666
+     .wh_isToday
+       border:1px solid #3BABF2
+       background-color:white
+       color: #3BABF2
+      .wh_chose_day  
+        background-color #FF7632
+        color :#ffffff
+   .wh_content_li   
+        color:#414141
+        font-size :13px;
+      .wh_jiantou2
+         border-top: 1px solid  #cccccc
+         border-right: 1px solid #cccccc 
+      .wh_jiantou1
+         border-top: 1px solid  #cccccc
+         border-left : 1px solid #cccccc       
+      
+  .title
+      text-align left
+      font-weight bolder
+      font-size 0.4rem
+      margin-left 0.5rem
+    .expert
+      width 10rem
+      border-left 3px solid #e7f6ff
       &:active
         background-color #f2f4f7
-      &:last-child 
-        border-right: 0;
-  .nowlearn 
-    margin-top: .21333rem;
-    padding: .41333rem;
-    min-height: 100%;
-    background-color: white;
-   
-    .head 
-      .title 
-        // display inline-block
-        font-weight: 500
-        font-size 0.512rem;
-      .seeall 
-        position: relative;
-        float: right;
-        font-size: 0.37133rem;
-        margin-right: 0.56889rem;
-        margin-top: 0.14222rem;
-        color #c8c8cd;
-        &:active
-          background-color #f2f4f7
-        &:after 
-          border: solid 2px #c8c8cd;
-          border-bottom-width: 0;
-          border-left-width: 0;
-          content: ' ';
-          top: 55%;
-          right: -0.42667rem;
-          position: absolute;
-          width: 7px;
-          height: 7px;
-          -webkit-transform: translateY(-50%) rotate(45deg);
-          transform: translateY(-50%) rotate(45deg);
-    .allclass
-      list-style-type none 
-      margin 0
-      margin-top .42667rem
-      padding 0
-      .class
-        display block 
-        height 2.84444rem
-        border-bottom 1px solid #c8c8cd
-        &:active
-          background-color #f2f4f7
-        .class-description
-          width 5.97332rem
-          display inline-block
-          .title
-            display block 
-            height 0.8532rem
-            margin-top 0.21333rem
-            font-size 0.512rem;
-          .progress
-            display block 
-            margin-top  0.56887rem
-            font-size 0.36974rem;
-            color #29b774
-        .class-img
-          float right 
-          display inline-block
-          width 2.98662rem
-          height 2rem
-          margin-top .22667rem
-          // margin-right .66667rem
+      img
+        width 110px
+        height 70px
+        border-radius 5%
+        vertical-align top
+        margin-left 0.3rem
+        margin-top 0.3rem
+      .expert-detail
+        display inline-block
+        margin 0.3rem
+        font-size 0.4rem
+        .name
+          display block
+          margin-bottom 0.2rem
+          font-size 14px
+          color #333333
+        .describe
+          display block
+          margin-bottom 0.2rem
+          color #8b8f97
+        .number
+          color #8b8f97
+          img
+            width 11px
+            height 8px
+      .recommend
+        font-size 0.4rem
+        margin 0.3rem
+        text-align left
+        color #8b8f97
+        span
+          color black
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis  
+
+
+
 </style>
+
+<style scoped>
+.head {
+  background-size: 375px 160px;
+  height: 160px;
+}
+.daytime{
+  padding-top: 90px;
+  padding-left: 20px;
+  color: white;
+
+}
+.daylab{
+
+    font-size: 40px;
+    display: inline-block
+  
+}
+.daye{
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.daye p {
+
+    margin: 0 auto;
+}
+.mycourselist{
+
+   padding-left: 20px;
+   padding-right: 20px;
+
+}
+
+.imyst{
+          position: absolute;
+          width :5.5px;
+          height: 6px;
+          border-radius: 5.5px;
+          background-color:#e7f6ff;
+          border: 1.5px solid #3babf2;
+          margin-left: -5px;
+          margin-top: 35px;
+}
+.icosm{
+
+     height: 10px;
+     width: 15px;
+     display: block;
+     margin-left: 180px;
+
+}
+.icosm img{
+      width: 8px;
+      height: 8px;
+
+}
+</style>
+

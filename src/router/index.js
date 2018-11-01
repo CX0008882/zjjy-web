@@ -135,8 +135,37 @@ export default new Router({
        name: 'paike',
        component: resolve => require(['@/views/Course/Paike'],resolve)
 
+    },
+    {
+
+      path:'/account/yuanzhang',
+      name: 'yuanzhang',
+      component: resolve => require (['@/views/Account/yuanzhang'],resolve)
+
+    },
+    {
+      path:'/Message/MessageList',
+      name:'messagelist',
+      component: resolve => require (['@/views/Message/MessageList'],resolve)
+
+
+    },
+    {
+        
+      path:'/Message/suggestions',
+      name:'suggestions',
+      component: resolve => require (['@/views/Message/Suggestions'],resolve)
+
+
+    },
+    {
+       path:'/Teach/AccoutList',
+       name:'AccountList',
+       component: resolve => require(['@/views/Account/Teache/AccoutList'],resolve)
+
+
 
     }
-
+   
   ]
 })

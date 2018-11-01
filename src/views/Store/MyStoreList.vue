@@ -1,5 +1,5 @@
 <template>
-    <div class="warrp">
+<div class="warrp">
 
   <div class="tab">
       <mt-navbar v-model="selected" fixed>
@@ -31,7 +31,7 @@
       </mt-tab-container>
 
 </div>
-    </div>
+</div>
 
 
 
