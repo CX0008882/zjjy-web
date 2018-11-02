@@ -3,7 +3,7 @@
 
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="item in recommend.swiperCourse" :key="item.id" class="item" >
-        <img :src="item.imgSrc" alt="" class="image" @click="changeToCoursedetails(item)">
+        <img :src="item.imgSrc" alt="" class="image">
       </mt-swipe-item>
     </mt-swipe>
 
@@ -32,9 +32,7 @@ export default {
     })
   },
   methods:{
-    changeToCoursedetails(course){
-      this.$router.push({path:"/home/coursedetails" , query:{id:course.id}})
-    },
+   
   }
 }
 </script>

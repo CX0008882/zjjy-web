@@ -5,10 +5,11 @@
       <span class="item_desc">{{ desc }}</span>
     </h2>
     <ul class="tab_content" ref="tabWrapper">
-      <li class="tab_item" v-for="item in itemList" ref="tabitem">
-        <span><img class="item-img" v-bind:src="item.imgSrc"></span>
+      <li class="tab_item" v-for="item in itemList" ref="tabitem" @click="gethuibeninfor" >
+        <div style="position: relative">
+        <span><img class="item-img" src="../../assets/img/temp/12.png"></span>
         <span class="tabtile">{{item.title}}</span>
-
+        </div>
       </li>
 
     </ul>
@@ -22,7 +23,7 @@
         itemList: [
           {
             "id": 10101,
-            "title": "10小时从0到1学习人工智能",
+            "title": "塔塔不是丑八怪",
             "imgSrc": "http://edu-image.nosdn.127.net/E5CAB39B274D3861AD662FDE77D785F2.jpg?imageView&thumbnail=450y250&quality=100",
             "starLevel": 3.7,
             "learnNumber": 312,
@@ -47,7 +48,7 @@
           },
           {
             "id": 10102,
-            "title": "人工智能时代的C++学习",
+            "title": "沙拉和他的谎言",
             "imgSrc": "http://edu-image.nosdn.127.net/37AED3C5541A122EEF0B9B6C62F0D3C7.png?imageView&thumbnail=450y250&quality=100",
             "starLevel": 4.7,
             "learnNumber": 1660,
@@ -71,7 +72,7 @@
           },
           {
             "id": 10103,
-            "title": "从零玩转Python大数据+人工智能-1",
+            "title": "采蘑菇的小姑娘",
             "imgSrc": "http://edu-image.nosdn.127.net/21FDC91762B503378784D59C8D8E1309.jpg?imageView&thumbnail=450y250&quality=100",
             "starLevel": 4.1,
             "learnNumber": 223,
@@ -96,7 +97,7 @@
           },
           {
             "id": 10103,
-            "title": "从零玩转Python大数据+人工智能-1",
+            "title": "从零玩转Python大数据",
             "imgSrc": "http://edu-image.nosdn.127.net/21FDC91762B503378784D59C8D8E1309.jpg?imageView&thumbnail=450y250&quality=100",
             "starLevel": 4.1,
             "learnNumber": 223,
@@ -202,13 +203,19 @@
         ]
       }
     },
-    props: ['title', 'desc'],
+    props: ['title', 'desc','url'],
     created() {
       this.$nextTick(() => {
         this.InitTabScroll();
       });
     },
     methods: {
+
+      gethuibeninfor(){
+
+         this.$router.push({path:this.url});
+
+      },
       InitTabScroll(){
         let width = 0
         for (let i = 0; i < this.itemList.length; i++) {
@@ -278,6 +285,11 @@
     text-overflow: ellipsis;
     line-height: 0.9;
     font-size: 13px;
+    position: absolute; 
+    top: 35px; 
+    left: 13px;
+    color: #FFFFFF;
+    font-size: 14px;
   }
   .tyo{
     display: inline-block;

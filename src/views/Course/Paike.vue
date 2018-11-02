@@ -49,6 +49,7 @@
 .warrp{
   padding-left: 20px;
   padding-top: 80px;
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
   -webkit-flex-direction:column;
@@ -71,9 +72,8 @@ border-bottom: 2px solid #ececec
 }
  .paike{
     margin-top: 50px;
-    width: 305px;
     height: 42px;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 42px;
     text-align: center;
     font-size: 14px;

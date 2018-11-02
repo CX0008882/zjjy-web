@@ -14,7 +14,7 @@
       </div>
       </a>
     </div>
-    <p>更多活动></p>
+    <div class="labifnor" @click="getActive" >更多活动</div>
   </div>
 
 </template>
@@ -39,6 +39,11 @@
         id=1;
         this.$router.push({path: '/course/couseInfo', params: {id: id}});
 
+      },
+      getActive(){
+ 
+        this.$router.push({path:'/classify'});
+ 
       }
 
     }
@@ -57,7 +62,7 @@
       margin-left 0.5rem
     .expert
       width 10rem
-      border-bottom 1px solid #e6eaf2
+      border-bottom 1px solid #F2F5F7
       &:active
         background-color #f2f4f7
       img
@@ -108,9 +113,19 @@
     background-size: 375px, 70px;
   }
   .activea{
-
   text-decoration:none;
   color:#333;
 }
+
+ .labifnor{
+    
+    text-align: center;
+    vertical-align:middle;
+    font-size: 11px;
+    color: #CCCCCC;
+    margin-top: 5px;
+   
+
+ }
 
 </style>

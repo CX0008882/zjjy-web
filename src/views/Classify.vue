@@ -60,7 +60,7 @@ export default {
     return {
       classes: [],
       nowClass:{},
-      selected: "1",
+      selected: "2",
       huibentypes:"1"
     };
   },

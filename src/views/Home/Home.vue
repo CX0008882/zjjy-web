@@ -10,9 +10,9 @@
       </mt-navbar>
     </div>
     <recommend></recommend>
-    <scrollView title="精选推荐" desc="更优质的贴心主题，更优质的教育~"/>
+    <scrollView title="精选推荐" desc="更优质的贴心主题，更优质的教育~" url="/course/couseActive" />
     <homeactive></homeactive>
-    <huiben title="绘本专题" desc="更优质的课程主题，更贴心的教育~"></huiben>
+    <huiben title="绘本专题" desc="更优质的课程主题，更贴心的教育~" url="/huiben/huibeninfor"></huiben>
     <pictiles></pictiles>
   </div>
 </template>
@@ -48,6 +48,7 @@
     data(){
       return {
         selected: "1",
+        title:"我的园"
       }
     },
     mounted(){

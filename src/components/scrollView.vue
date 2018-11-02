@@ -5,7 +5,7 @@
       <span class="item_desc">{{ desc }}</span>
     </h2>
     <ul class="tab_content" ref="tabWrapper">
-      <li class="tab_item" v-for="item in itemList" ref="tabitem">
+      <li class="tab_item" v-for="item in itemList" ref="tabitem" @click="getinfro">
         <span><img class="item-img" v-bind:src="item.imgSrc"></span>
         <span class="tabtile">{{item.title}}</span>
         <span class="tyo"><img src="../assets/img/ear.png"/>123流览量</span>
@@ -202,13 +202,19 @@
         ]
       }
     },
-    props: ['title', 'desc'],
+    props: ['title', 'desc','url'],
     created() {
       this.$nextTick(() => {
         this.InitTabScroll();
       });
     },
     methods: {
+      getinfro(){
+           
+          // this.$router.push({path:"/home/coursedetails" , query:{id:course.id}})
+          this.$router.push({path:this.url});
+
+      },
       InitTabScroll(){
         let width = 0
         for (let i = 0; i < this.itemList.length; i++) {
