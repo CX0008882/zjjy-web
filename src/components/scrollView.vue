@@ -1,5 +1,8 @@
 <template>
+
+
   <div class="tab" ref="tab" id="anchor-1">
+ 
     <h2>
       <span class="item_title">{{ title }}</span>
       <span class="item_desc">{{ desc }}</span>
@@ -12,10 +15,11 @@
       </li>
 
     </ul>
+   
   </div>
 </template>
 <script>
-  import BScroll from 'better-scroll';
+  //import BScroll from 'better-scroll';
   export default {
     data() {
       return {
@@ -203,46 +207,21 @@
       }
     },
     props: ['title', 'desc','url'],
-    created() {
-      this.$nextTick(() => {
-        this.InitTabScroll();
-      });
-    },
+  
     methods: {
       getinfro(){
            
           // this.$router.push({path:"/home/coursedetails" , query:{id:course.id}})
           this.$router.push({path:this.url});
 
-      },
-      InitTabScroll(){
-        let width = 0
-        for (let i = 0; i < this.itemList.length; i++) {
-          width += this.$refs.tabitem[0].getBoundingClientRect().width; //getBoundingClientRect() 返回元素的大小及其相对于视口的位置
-        }
-        this.$refs.tabWrapper.style.width = width + 'px'
-        this.$nextTick(() => {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs.tab, {
-              startX: 0,
-              click: true,
-              scrollX: true,
-              scrollY: false,
-              eventPassthrough: 'vertical'
-            });
-          } else {
-            this.scroll.refresh()
-          }
-        });
       }
     }
   };
 </script>
 <style scoped>
   .tab {
-    width: 100vw;
     overflow: hidden;
-    padding: 5px;
+    padding: 20px;
   }
 
   .item_title {

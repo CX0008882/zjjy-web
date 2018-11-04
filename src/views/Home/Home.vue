@@ -72,15 +72,20 @@
   .wrapper
     width 100%
     height 92%
-    .mint-search
-      height initial
+
     .mint-navbar .mint-tab-item.is-selected
       margin 0
+      color #333333
       border-bottom none
-      .tab
-        height 53px
-        width 375px
-        font-size 0.13rem
+      background linear-gradient(#3BABF2, #3BABF2) no-repeat
+      background-size 17px 3px
+      background-position  28px 32px
+      &：div
+       font-size 13px
+    .tab
+      font-size 0.13rem
+     .mint-navbar .mint-tab-item 
+      color #999999
 
 
 </style>

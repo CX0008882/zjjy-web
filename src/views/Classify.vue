@@ -46,7 +46,6 @@
 </template>
 
 <script>
-import search from "@/components/search"
 import { getClassify } from "@/api/api"
 import MtTabContainerItem from "../../node_modules/mint-ui/packages/tab-container-item/src/tab-container-item";
 import MtTabbar from "../../node_modules/mint-ui/packages/tabbar/src/tabbar";
@@ -65,7 +64,6 @@ export default {
     };
   },
   components: {
-    search,
     MtTabItem,
     MtTabContainer,
     MtTabbar,
@@ -75,10 +73,7 @@ export default {
     picList
   },
   methods: {
-    changeToSearch() {
-
-      this.$router.push({ path: "home/search" });
-    },
+  
     changeTitle(key) {         //改变css样式（当前点亮）
 
       this.huibentypes=key;
@@ -131,17 +126,15 @@ export default {
   height 92%
   width 100%
   overflow scroll
-  .search
-    position fixed
-    overflow hidden
-  .mint-search
-    height initial
   .mint-navbar .mint-tab-item.is-selected
       margin 0
       border-bottom none
+      color #333333
+      background linear-gradient(#3BABF2, #3BABF2) no-repeat
+      background-size 17px 3px
+      background-position  38px 32px
       .tab
         height 53px
-        width 375px
         font-size 0.13rem
 
   .left

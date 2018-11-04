@@ -12,7 +12,6 @@
           <img :src="course.imgSrc" alt="">
           <span class="title">{{course.title}}</span>
           <div class="relevent">
-            <star :size="24" :score="course.starLevel" class="star"></star>
             <span class="starlevel">{{course.starLevel}}</span>
             <span class="learnnumber">{{course.learnNumber}}人学过</span>
             <span class="newprice">￥{{course.newPrice}}</span>
@@ -26,7 +25,6 @@
 </template>
 
 <script>
-import star from '@/components/star/star'
 import {getClassic} from '@/api/api'
 export default {
   data(){
@@ -35,7 +33,7 @@ export default {
     }
   },
   components:{
-    star,
+    
   },
   methods:{
     changeToCoursedetails(course){

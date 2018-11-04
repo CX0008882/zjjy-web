@@ -13,7 +13,7 @@
 <div class="contents">
 <mt-tab-container v-model="selected">
 
-        <mt-tab-container-item id="1">
+    <mt-tab-container-item id="1">
 
      <ActiveList :typeId="huibentypes"></ActiveList>
         </mt-tab-container-item>
@@ -32,10 +32,6 @@
 
 </div>
 </div>
-
-
-
-
 
 </template>
 
@@ -75,7 +71,6 @@ export default {
     ActiveList,
     picList
       
-
     }
 }
 

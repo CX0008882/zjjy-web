@@ -13,9 +13,8 @@
 </template>
 
 <script>
-import star from '@/components/star/star'
+
 import {getRecommend} from '@/api/api'
-import socorll from '@/components/soclle'
 export default {
   data(){
     return{
@@ -23,8 +22,7 @@ export default {
     }
   },
   components:{
-    star,
-    socorll,
+  
   },
   mounted(){
     getRecommend().then(res=>{

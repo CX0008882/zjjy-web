@@ -1,5 +1,6 @@
 <template>
   <div class="tab">
+  
     <mt-tabbar  v-show="isShowTabbar" fixed>
       <mt-tab-item id="首页" class="tabbar-item" @click.native="changeToMain">
         <i slot="icon" class="icon iconfont icon-shouye" :style="maincolor"></i>
@@ -37,8 +38,6 @@ export default {
    	computed: {
       isShowTabbar () {
         let routeLength = this.$route.path.split('/').length;
-        // let home = this.$route.path.split('/')[1];
-
         return routeLength > 2  ? false : true;
       }
     }, 

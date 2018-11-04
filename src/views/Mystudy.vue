@@ -17,7 +17,7 @@
       :markDate=arr></Calendar>
 
         <div class="icosm" @click="showwweks" v-show="myShow">
-          
+
              <img src="../assets/icon/shangjiantou.png" alt="">
 
         </div>
@@ -26,46 +26,62 @@
 
       <div id="myweeksday" v-show="weekShow">
 
-     <div data-v-824b0b00="" class="wh_content_all"> <div data-v-824b0b00="" class="wh_content"><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+       <div data-v-22dd1b6a="" class="wh_content"><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           日
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           一
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           二
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           三
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           四
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           五
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_top_tag">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_top_tag">
           六
-        </div></div></div> <div data-v-824b0b00="" class="wh_content"><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div></div>
+
+         
+         <div data-v-22dd1b6a="" class="wh_content">
+           <div data-v-22dd1b6a="" class="wh_content_item">
+             <div data-v-22dd1b6a="" class="wh_item_date">
           1
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_item_date">
           2
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_item_date">
           3
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_item_date">
           4
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_item_date">
           5
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_item_date">
           6
-        </div></div><div data-v-824b0b00="" class="wh_content_item"><div data-v-824b0b00="" class="wh_item_date">
+        </div></div><div data-v-22dd1b6a="" class="wh_content_item"><div data-v-22dd1b6a="" class="wh_item_date">
           7
         </div></div></div>
+
+
+         </div>
         
         <div class="icosm" @click="showwweks" @v-show="myShow">
            
             <img src="../assets/icon/xiajiandou.png" alt="">
 
         </div>
-        </div>
 
-      </div>
+    
   
-    </div>
+   
+   
+   
+   
+   
+   
+   </div>
+
+
+    
     <div class="mycourselist">
       <h2>上午</h2>
      
@@ -283,5 +299,13 @@ export default {
       height: 8px;
 
 }
+</style>
+<style>
+  
+  .wh_item_date{
+
+    color:#666666
+  }
+
 </style>
 
